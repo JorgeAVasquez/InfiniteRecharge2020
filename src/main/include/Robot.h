@@ -9,8 +9,9 @@
 
 #include <string>
 
-#include <frc/TimedRobot.h>
+#include <frc/WPILib.h>
 #include <frc/smartdashboard/SendableChooser.h>
+#include "rev/ColorSensorV3.h"
 
 class Robot : public frc::TimedRobot {
  public:
@@ -27,4 +28,7 @@ class Robot : public frc::TimedRobot {
   const std::string kAutoNameDefault = "Default";
   const std::string kAutoNameCustom = "My Auto";
   std::string m_autoSelected;
+
+  static constexpr auto i2cPort = frc::I2C::Port::kOnboard;
+  rev::ColorSensorV3 color{i2cPort};
 };
