@@ -1,5 +1,10 @@
 #include "DriveTrain.h"
 
+DriveTrain::DriveTrain(frc::Joystick* stick, frc::DifferentialDrive* motors){
+    joystick = stick;
+    driveMotors = motors;
+}
+
 void DriveTrain::GetPos(){
     y = GetY();
     z = GetTwist();
