@@ -2,7 +2,7 @@
 #include <string>
 #include <frc/VictorSP.h>
 #include <frc/Joystick.h>
-#include <frc/DifferentialDrive.h>
+#include <frc/drive/DifferentialDrive.h>
 
 class DriveTrain {
     public:
@@ -14,9 +14,9 @@ class DriveTrain {
     frc::VictorSP rearLeft[3];
     frc::Joystick stick[1];
 
-    frc::SpeedControllerGroup leftGroup {frontLeft, rearLeft};
-    frc::SpeedControllerGroup rightGroup {frontRight, rearRight};
-    frc::DifferentialDrive drive {leftGroup, rightGroup};
+    frc::SpeedControllerGroup leftMotors {frontLeft, rearLeft};
+    frc::SpeedControllerGroup rightMotors {frontRight, rearRight};
+    frc::DifferentialDrive driveMotors {leftGroup, rightGroup};
     
     void Drive;
     void GetPos;
