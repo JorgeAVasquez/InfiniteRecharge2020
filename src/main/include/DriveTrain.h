@@ -8,11 +8,11 @@ class DriveTrain {
     public:
 
     private:
-    frc::VictorSP frontRight[0];
-    frc::VictorSP rearRight[1];
-    frc::VictorSP frontLeft[2];
-    frc::VictorSP rearLeft[3];
-    frc::Joystick stick[1];
+    frc::VictorSP frontRight{0};
+    frc::VictorSP rearRight{1};
+    frc::VictorSP frontLeft{2}
+    frc::VictorSP rearLeft{3};
+    frc::Joystick stick{1};
 
     frc::SpeedControllerGroup leftMotors {frontLeft, rearLeft};
     frc::SpeedControllerGroup rightMotors {frontRight, rearRight};
