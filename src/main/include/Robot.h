@@ -8,8 +8,12 @@
 #pragma once
 
 #include <string>
-#include <frc::Joystick.h>
+#include <frc/Joystick.h>
 #include <frc/smartdashboard/SendableChooser.h>
+#include <frc/VictorSP.h>
+#include <frc/drive/DifferentialDrive.h>
+#include <frc/SpeedControllerGroup.h>
+#include <frc/TimedRobot.h>
 #include "rev/ColorSensorV3.h"
 
 class Robot : public frc::TimedRobot {
