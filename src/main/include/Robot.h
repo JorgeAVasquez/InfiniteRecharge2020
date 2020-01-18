@@ -9,7 +9,6 @@
 
 #include <string>
 
-#include <frc/WPILib.h>
 #include <frc/smartdashboard/SendableChooser.h>
 #include "rev/ColorSensorV3.h"
 
