@@ -18,6 +18,7 @@ class DriveTrain {
     frc::SpeedControllerGroup rightGroup {frontRight, rearRight};
     frc::DifferentialDrive drive {leftGroup, rightGroup};
     
-    
-
+    void Drive;
+    void GetPos;
+    double x, y, z;
 };
