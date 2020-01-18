@@ -1,13 +1,13 @@
 #include "DriveTrain.h"
 
 void DriveTrain::GetPos(){
-    x = GetX(JoystickHand hand = kRightHand);
-    z = GetZ(JoystickHand hand = kRightHand);
+    y = GetY();
+    z = GetTwist();
 }
 
 void DriveTrain::Drive(){
-    frc::SmartDashboard::PutNumber("XPos", x);
-    frc::SmartDashboard::PutNumber("ZPos", z);
-    driveMotors->ArcadeDrive(x, z, true);
-    
+    //frc::SmartDashboard::PutNumber("XPos", x);
+    //frc::SmartDashboard::PutNumber("ZPos", z);
+    driveMotors->ArcadeDrive(y, z, true);
+
 }
