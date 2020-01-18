@@ -16,7 +16,7 @@ class DriveTrain {
 
     frc::SpeedControllerGroup leftMotors {frontLeft, rearLeft};
     frc::SpeedControllerGroup rightMotors {frontRight, rearRight};
-    frc::DifferentialDrive driveMotors {leftGroup, rightGroup};
+    frc::DifferentialDrive driveMotors {leftMotors, rightMotors};
     
     void Drive;
     void GetPos;
