@@ -11,8 +11,31 @@ void DriveTrain::GetPos(){
 }
 
 void DriveTrain::Drive(){
+    DeadZone(0.15, 0.7);
     frc::SmartDashboard::PutNumber("YPos", y);
     frc::SmartDashboard::PutNumber("ZPos", z);
     driveMotors->ArcadeDrive(y, z, true);
 
+}
+
+void DriveTrain::DeadZone(double lateralPercent, double twistPercent){
+    if(y < lateralPercent && y > -lateralPercent){
+        y = 0;
+    }
+    else if(y >= lateralPercent){
+        y = (y - lateralPercent) / (1 - lateralPercent);
+    }
+    else{
+        y = (y + lateralPercent) / (1 - lateralPercent);
+    }
+
+    if(z < twistPercent && z > -twistPercent){
+        z = 0;
+    }
+    else if(z >= twistPercent){
+        z = (z - twistPercent) / (1 - twistPercent);
+    }
+    else{
+        z = (z + twistPercent) / (1 - twistPercent);
+    }
 }
