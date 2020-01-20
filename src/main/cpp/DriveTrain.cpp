@@ -11,8 +11,8 @@ void DriveTrain::GetPos(){
 }
 
 void DriveTrain::Drive(){
-    //frc::SmartDashboard::PutNumber("YPos", y);
-    //frc::SmartDashboard::PutNumber("ZPos", z);
+    frc::SmartDashboard::PutNumber("YPos", y);
+    frc::SmartDashboard::PutNumber("ZPos", z);
     driveMotors->ArcadeDrive(y, z, true);
 
 }
