@@ -6,8 +6,8 @@ DriveTrain::DriveTrain(frc::Joystick* stick, frc::DifferentialDrive* motors){
 }
 
 void DriveTrain::GetPos(){
-    y = GetY();
-    z = GetTwist();
+    y = joystick->GetY();
+    z = joystick->GetTwist();
 }
 
 void DriveTrain::Drive(){
