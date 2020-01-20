@@ -4,6 +4,7 @@
 #include <frc/Joystick.h>
 #include <frc/drive/DifferentialDrive.h>
 #include <frc/SpeedControllerGroup.h>
+#include <frc/smartdashboard/SmartDashboard.h>
 
 class DriveTrain {
     public:

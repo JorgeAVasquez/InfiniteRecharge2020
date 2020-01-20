@@ -6,13 +6,13 @@ DriveTrain::DriveTrain(frc::Joystick* stick, frc::DifferentialDrive* motors){
 }
 
 void DriveTrain::GetPos(){
-    y = GetY();
-    z = GetTwist();
+    y = joystick->GetY();
+    z = joystick->GetTwist();
 }
 
 void DriveTrain::Drive(){
-    //frc::SmartDashboard::PutNumber("YPos", y);
-    //frc::SmartDashboard::PutNumber("ZPos", z);
+    frc::SmartDashboard::PutNumber("YPos", y);
+    frc::SmartDashboard::PutNumber("ZPos", z);
     driveMotors->ArcadeDrive(y, z, true);
 
 }
