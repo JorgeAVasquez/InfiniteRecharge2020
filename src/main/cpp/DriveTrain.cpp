@@ -18,7 +18,7 @@ void DriveTrain::Drive(){
 
 }
 
-void DriveTrain::DeadZone(double lateralPercent, double twistPercent){
+void DriveTrain::DeadZone(double lateralPercent){
     if(y < lateralPercent && y > -lateralPercent){
         y = 0;
     }
@@ -27,15 +27,5 @@ void DriveTrain::DeadZone(double lateralPercent, double twistPercent){
     }
     else{
         y = (y + lateralPercent) / (1 - lateralPercent);
-    }
-
-    if(z < twistPercent && z > -twistPercent){
-        z = 0;
-    }
-    else if(z >= twistPercent){
-        z = (z - twistPercent) / (1 - twistPercent);
-    }
-    else{
-        z = (z + twistPercent) / (1 - twistPercent);
     }
 }

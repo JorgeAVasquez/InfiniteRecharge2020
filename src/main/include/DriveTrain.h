@@ -15,7 +15,7 @@ class DriveTrain {
     frc::DifferentialDrive* driveMotors;
     
     void GetPos();
-    void DeadZone(double, double);
+    void DeadZone(double);
 
     double GetY();
     double GetTwist();
