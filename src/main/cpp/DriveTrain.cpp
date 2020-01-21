@@ -11,7 +11,7 @@ void DriveTrain::GetPos(){
 }
 
 void DriveTrain::Drive(){
-    DeadZone(0.15, 0.7);
+    DeadZone(0.15);
     frc::SmartDashboard::PutNumber("YPos", y);
     frc::SmartDashboard::PutNumber("ZPos", z);
     driveMotors->ArcadeDrive(y, z, true);
