@@ -34,4 +34,14 @@ class Robot : public frc::TimedRobot {
 
   static constexpr auto i2cPort = frc::I2C::Port::kOnboard;
   rev::ColorSensorV3 color{i2cPort};
+
+  frc::VictorSP frontRight{0};
+  frc::VictorSP rearRight{1};
+  frc::VictorSP frontLeft{2};
+  frc::VictorSP rearLeft{3};
+  frc::SpeedControllerGroup leftMotors {frontLeft, rearLeft};
+  frc::SpeedControllerGroup rightMotors {frontRight, rearRight};
+  frc::DifferentialDrive driveMotors {leftMotors, rightMotors};
+  frc::Joystick joystick{1};
+
 };
