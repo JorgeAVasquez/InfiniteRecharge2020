@@ -12,7 +12,7 @@ class colorSensor {
         static constexpr auto i2cPort = frc::I2C::Port::kOnboard;
 
 
-        rev::ColorSensorV3 m_colorSensor{i2cPort};
+        rev::ColorSensorV3 colorSensor{i2cPort};
 
 
 };
