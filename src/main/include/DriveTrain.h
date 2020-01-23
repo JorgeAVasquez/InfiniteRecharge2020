@@ -5,13 +5,15 @@
 #include <frc/drive/DifferentialDrive.h>
 #include <frc/SpeedControllerGroup.h>
 #include <frc/smartdashboard/SmartDashboard.h>
+#include "Robot.h"
 
 class DriveTrain {
     public:
-    DriveTrain(frc::Joystick*, frc::DifferentialDrive*);
+    DriveTrain(frc::Joystick*, frc::Joystick*, frc::DifferentialDrive*);
     void Drive();
     private:
-    frc::Joystick* joystick;
+    frc::Joystick* leftStick;
+    frc::Joystick* rightStick;
     frc::DifferentialDrive* driveMotors;
     
     void GetPos();
@@ -19,8 +21,7 @@ class DriveTrain {
     void Dump();
 
     double GetY();
-    double GetTwist();
 
-    double x, y, z;
+    double leftInput, rightInput;
     
 };
