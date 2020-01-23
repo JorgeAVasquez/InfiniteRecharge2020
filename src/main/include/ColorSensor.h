@@ -3,7 +3,7 @@
 #include "rev/ColorSensorV3.h"
 #include "frc/smartdashboard/smartdashboard.h"
 
-class colorSensor {
+class ColorSensor {
     public:
 
     private:

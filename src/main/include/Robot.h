@@ -15,6 +15,7 @@
 #include <frc/SpeedControllerGroup.h>
 #include <frc/TimedRobot.h>
 #include "rev/ColorSensorV3.h"
+#include <DriveTrain.h>
 
 class Robot : public frc::TimedRobot {
  public:
@@ -43,5 +44,6 @@ class Robot : public frc::TimedRobot {
   frc::SpeedControllerGroup rightMotors {frontRight, rearRight};
   frc::DifferentialDrive driveMotors {leftMotors, rightMotors};
   frc::Joystick joystick{1};
+  DriveTrain dT{&joystick, &driveMotors};
 
 };

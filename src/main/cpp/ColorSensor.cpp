@@ -1,6 +1,6 @@
 #include "ColorSensor.h"
 
-    void colorSensor::Sense(){
+    void ColorSensor::Sense(){
         
         // defining the port the color senseor is connected to, can be changed
         static constexpr auto i2cPort = frc::I2C::Port::kOnboard;

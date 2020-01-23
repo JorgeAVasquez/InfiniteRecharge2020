@@ -11,5 +11,6 @@ class Mechanisms {
     void Lift();
     void Shoot();
     void Spin();
-    
+    frc::VictorSP motor{0};
+    std::string x;
 };
