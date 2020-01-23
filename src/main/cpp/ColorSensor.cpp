@@ -6,7 +6,7 @@
         static constexpr auto i2cPort = frc::I2C::Port::kOnboard;
 
 
-        frc::Color detectedColor = colorSensor.GetColor();
+        frc::Color detectedColor = sensor.GetColor();
 
         frc::SmartDashboard::PutNumber("Red", detectedColor.red);
         frc::SmartDashboard::PutNumber("Green", detectedColor.green);

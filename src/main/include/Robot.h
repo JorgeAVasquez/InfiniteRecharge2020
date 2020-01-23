@@ -43,7 +43,10 @@ class Robot : public frc::TimedRobot {
   frc::SpeedControllerGroup leftMotors {frontLeft, rearLeft};
   frc::SpeedControllerGroup rightMotors {frontRight, rearRight};
   frc::DifferentialDrive driveMotors {leftMotors, rightMotors};
-  frc::Joystick joystick{1};
-  DriveTrain dT{&joystick, &driveMotors};
+  frc::Joystick leftStick{1};
+  frc::Joystick rightStick{2};
+  DriveTrain dT{&leftStick, &rightStick, &driveMotors};
 
+  frc::Joystick leftStick{1};
+  frc::Joystick rightStick{2};
 };

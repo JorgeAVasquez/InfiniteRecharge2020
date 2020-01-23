@@ -1,31 +1,45 @@
 #include "DriveTrain.h"
 
-DriveTrain::DriveTrain(frc::Joystick* stick, frc::DifferentialDrive* motors){
-    joystick = stick;
+DriveTrain::DriveTrain(frc::Joystick* lStick, frc::Joystick* rStick, frc::DifferentialDrive* motors){
+    leftStick = lStick;
+    rightStick = rStick;
     driveMotors = motors;
 }
 
 void DriveTrain::GetPos(){
-    y = joystick->GetY();
-    z = joystick->GetTwist();
+    leftInput = leftStick->GetY();
+    rightInput = rightStick->GetY();
+}
+
+void DriveTrain::Dump(){
+    frc::SmartDashboard::PutNumber("LeftY", leftInput);
+    frc::SmartDashboard::PutNumber("RightY", rightInput);
 }
 
 void DriveTrain::Drive(){
-    DeadZone(0.15);
-    frc::SmartDashboard::PutNumber("YPos", y);
-    frc::SmartDashboard::PutNumber("ZPos", z);
-    driveMotors->ArcadeDrive(y, z, true);
-
+    ScaleInputs(0.15);
+    Dump();
+    driveMotors->TankDrive(leftInput, rightInput, true);
 }
 
-void DriveTrain::DeadZone(double lateralPercent){
-    if(y < lateralPercent && y > -lateralPercent){
-        y = 0;
+void DriveTrain::ScaleInputs(double lateralPercent){
+    if(leftInput < lateralPercent && leftInput > -lateralPercent){
+        leftInput = 0;
     }
-    else if(y >= lateralPercent){
-        y = (y - lateralPercent) / (1 - lateralPercent);
+    else if(leftInput >= lateralPercent){
+        leftInput = (leftInput - lateralPercent) / (1 - lateralPercent);
     }
     else{
-        y = (y + lateralPercent) / (1 - lateralPercent);
+        leftInput = (leftInput + lateralPercent) / (1 - lateralPercent);
+    }
+
+    if(rightInput < lateralPercent && rightInput > -lateralPercent){
+        rightInput = 0;
+    }
+    else if(rightInput >= lateralPercent){
+        rightInput = (rightInput - lateralPercent) / (1 - lateralPercent);
+    }
+    else{
+        rightInput = (rightInput + lateralPercent) / (1 - lateralPercent);
     }
 }
