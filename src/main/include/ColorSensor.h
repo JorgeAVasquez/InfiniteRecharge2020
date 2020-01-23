@@ -14,8 +14,7 @@ class colorSensor {
         //not sure on whether be .h or .cpp errors apear when deleted on either
         static constexpr auto i2cPort = frc::I2C::Port::kOnboard;
 
-        //"defining it or something" -paul
-        rev::ColorSensorV3 m_colorSensor{i2cPort};
+        rev::ColorSensorV3 colorSensor{i2cPort};
 
 
 };
