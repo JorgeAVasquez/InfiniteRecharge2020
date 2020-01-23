@@ -10,15 +10,7 @@ void DriveTrain::GetPos(){
     z = joystick->GetTwist();
 }
 
-void DriveTrain::Drive(){
-    DeadZone(0.15);
-    frc::SmartDashboard::PutNumber("YPos", y);
-    frc::SmartDashboard::PutNumber("ZPos", z);
-    driveMotors->ArcadeDrive(y, z, true);
-
-}
-
-void DriveTrain::DeadZone(double lateralPercent){
+void DriveTrain::ScaleInputs(double lateralPercent){
     if(y < lateralPercent && y > -lateralPercent){
         y = 0;
     }
@@ -28,4 +20,17 @@ void DriveTrain::DeadZone(double lateralPercent){
     else{
         y = (y + lateralPercent) / (1 - lateralPercent);
     }
+}
+
+void DriveTrain::Dump() {
+    frc::SmartDashboard::PutNumber("YPos", y);
+    frc::SmartDashboard::PutNumber("ZPos", z);
+}
+
+void DriveTrain::Drive() {
+    GetPos();
+    ScaleInputs(0.15);
+    
+    driveMotors->ArcadeDrive(y, z, true);
+
 }
