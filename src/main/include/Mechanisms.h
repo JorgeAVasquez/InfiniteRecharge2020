@@ -3,9 +3,13 @@
 #include <frc/SpeedControllerGroup.h>
 #include <frc/WPILib.h>
 
-class mechanisms {
+class Mechanisms {
     public:
-
+    Mechanisms();
     private:
+    void Crawl();
+    void Lift();
+    void Shoot();
+    void Spin();
     
 };
