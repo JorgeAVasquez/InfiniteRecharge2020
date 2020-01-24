@@ -46,7 +46,4 @@ class Robot : public frc::TimedRobot {
   frc::Joystick leftStick{1};
   frc::Joystick rightStick{2};
   DriveTrain dT{&leftStick, &rightStick, &driveMotors};
-
-  frc::Joystick leftStick{1};
-  frc::Joystick rightStick{2};
 };
