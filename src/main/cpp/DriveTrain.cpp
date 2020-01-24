@@ -7,8 +7,8 @@ DriveTrain::DriveTrain(frc::Joystick* lStick, frc::Joystick* rStick, frc::Differ
 }
 
 void DriveTrain::GetPos(){
-    leftInput = leftStick->GetY();
-    rightInput = rightStick->GetY();
+    leftInput = -leftStick->GetY();
+    rightInput = -rightStick->GetY();
 }
 
 void DriveTrain::Dump(){
@@ -18,6 +18,7 @@ void DriveTrain::Dump(){
 
 void DriveTrain::Drive(){
     ScaleInputs(0.15);
+    GetPos();
     Dump();
     driveMotors->TankDrive(leftInput, rightInput, true);
 }
