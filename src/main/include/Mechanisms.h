@@ -1,7 +1,6 @@
 #include <frc/VictorSP.h>
 #include <frc/XBoxController.h>
 #include <frc/SpeedControllerGroup.h>
-#include <frc/WPILib.h>
 #include <frc/XboxController.h>
 
 class Mechanisms {
@@ -20,6 +19,5 @@ class Mechanisms {
     frc::VictorSP liftMotor2{3};
     frc::VictorSP shootMotor{4};
     frc::VictorSP spinMotor{5};
-frc::PWMSpeedController
 //    std::string x;
 };

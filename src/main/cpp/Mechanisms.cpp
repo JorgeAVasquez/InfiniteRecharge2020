@@ -1,5 +1,4 @@
 #include "Mechanisms.h"
-#include <frc/WPILib.h>
 
 Mechanisms::Mechanisms()
 {
